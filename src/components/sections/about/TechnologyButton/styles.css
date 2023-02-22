@@ -1,0 +1,17 @@
+.TechnologyButton-component{
+    background-color: #1F5673;
+    border-radius: 5px;
+    color:white;
+    padding: 10px 15px;
+    text-align: center;
+    margin: 5px 10px 5px 0;
+    font-size: 14px;
+    width: auto;
+    display: inline-block;
+}
+
+@media(max-width:450px){
+    .TechnologyButton-component {
+        font-size: 10px;
+    }
+}

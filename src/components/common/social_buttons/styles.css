@@ -1,0 +1,47 @@
+a {
+  text-decoration: none;
+}
+.socialButtonContainer {
+  width: 50px;
+  height: 50px;
+  background: #5b5a5a;
+  box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.25);
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin: 20px;
+}
+
+.socialButtonContainer > #icon {
+  color: white;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+.socialButtonContainer:hover > #icon {
+  transform: scale(1.1);
+  color: var(--darker-blue);
+  transition: all 0.5s;
+}
+
+@media (max-width: 1250px) {
+  .socialButtonContainer {
+    width: 40px;
+    height: 40px;
+  }
+
+  .socialButtonContainer > #icon {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 470px) {
+  .socialButtonContainer {
+    width: 30px;
+    height: 30px;
+  }
+
+  .socialButtonContainer > #icon {
+    font-size: 13px;
+  }
+}

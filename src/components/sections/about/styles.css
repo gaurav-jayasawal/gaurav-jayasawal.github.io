@@ -1,0 +1,127 @@
+.NewAbout-component {
+  min-height: 100vh;
+  padding: 50px 250px;
+  box-sizing: border-box;
+}
+
+.NewAbout-component .NewAbout-component--title {
+  font-size: 24px;
+  margin-bottom: 50px;
+  letter-spacing: 5px;
+}
+
+.NewAbout-component--contents__right-description h3 {
+  font-weight: normal;
+}
+.NewAbout-component .NewAbout-component--contents {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 40px;
+}
+
+.NewAbout-component--contents__right-familiar_technologies h4 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.NewAbout-component
+  .NewAbout-component--contents
+  .NewAbout-component--contents__left
+  .NewAbout-component--content__left-button {
+  display: grid;
+  justify-items: center;
+}
+
+.NewAbout-component--contents__right-description {
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.NewAbout-component--contents__right-projects_button {
+  margin-top: 10%;
+  display: grid;
+  justify-items: center;
+}
+
+.NewAbout-component--contents__right {
+  display: grid;
+}
+
+.NewAbout-component--contents__right-description a {
+  color: #1f5673;
+}
+
+.NewAbout-component--contents__right-familiar_technologies h4 {
+  margin-top: 5px;
+}
+
+@media (max-width: 1750px) {
+  .NewAbout-component {
+    padding: 50px 200px;
+  }
+}
+
+@media (max-width: 1700px) {
+  .NewAbout-component {
+    padding: 50px 150px;
+  }
+}
+
+@media (max-width: 1650px) {
+  .NewAbout-component {
+    padding: 50px 150px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .NewAbout-component {
+    padding: 50px 100px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .NewAbout-component .NewAbout-component--contents {
+    grid-template-columns: 1fr;
+    grid-row-gap: 50px;
+  }
+  .NewAbout-component--content__left-image {
+    display: grid;
+    justify-items: center;
+  }
+  .NewAbout-component--content__left-image img {
+    width: 70%;
+  }
+}
+
+@media (max-width: 850px) {
+  .NewAbout-component--contents__right-description h3 {
+    font-size: 14px;
+  }
+  .NewAbout-component--contents__right-familiar_technologies h4 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 700px) {
+  .NewAbout-component--content__left-image img {
+    width: 350px;
+  }
+  .NewAbout-component {
+    padding: 50px 50px;
+  }
+  .NewAbout-component .NewAbout-component--title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 530px) {
+  .NewAbout-component--content__left-image img {
+    width: 300px;
+  }
+}
+
+@media (max-width: 450px) {
+  .NewAbout-component--content__left-image img {
+    width: 100%;
+  }
+}

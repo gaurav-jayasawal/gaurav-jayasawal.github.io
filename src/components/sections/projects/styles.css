@@ -1,0 +1,87 @@
+.project {
+  background: #f3f3f3;
+  min-height: 100vh;
+  padding: 50px 250px;
+  box-sizing: border-box;
+}
+
+.project-title {
+  font-size: 24px;
+  margin-bottom: 50px;
+  letter-spacing: 5px;
+}
+
+.project-buttons {
+  text-align: justify;
+}
+
+.project-buttons_btn {
+  background: #b1c2cb;
+  padding: 10px 15px;
+  margin: 10px;
+  color: #1f5673;
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.25);
+}
+
+.project-buttons_btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.25);
+}
+
+.project-help {
+  margin-top: 50px;
+}
+
+* {
+  /* border: 1px solid black; */
+}
+
+@media (max-width: 1750px) {
+  .project {
+    padding: 50px 200px;
+  }
+}
+
+@media (max-width: 1700px) {
+  .project {
+    padding: 50px 150px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .project {
+    padding: 50px 100px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .project-buttons_btn {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 700px) {
+  .project-title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .project-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .project {
+    padding: 50px;
+  }
+}
+
+@media (max-width: 450px) {
+  .project-buttons_btn {
+    font-size: 10px;
+  }
+}

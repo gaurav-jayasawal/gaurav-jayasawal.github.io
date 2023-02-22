@@ -1,3 +1,11 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+:root {
+  --light-blue: #ace8ff;
+  --darker-blue: #5bc3eb;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  /* border: 2px solid blue; */
 }
