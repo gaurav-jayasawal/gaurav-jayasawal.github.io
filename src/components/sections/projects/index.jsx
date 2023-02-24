@@ -1,13 +1,16 @@
 import "./styles.css";
-import ProjectContainer from "./ProjectContainer";
 import { projectData, projectButtons, projectTechnologies } from "./data";
 import { useState } from "react";
 
 const Projects = () => {
+  // State
+
   const [currentlyShowing, setCurrentlyShowing] = useState(projectData);
   const [message, setMessage] = useState(
     "All projects. Use buttons to filter."
   );
+
+  // Helper functions
 
   const handleProjectBtnClick = (e) => {
     let clickedTechId = e.target.id;
@@ -39,11 +42,46 @@ const Projects = () => {
     );
   };
 
-  return (
-    <div className="project" id="projects">
-      <div className="project-title">
-        <h1>some of my projects</h1>
+  // Sub components
+
+  const Project = ({ project }) => {
+    return (
+      <div key={project.id} className="ProjectContainer_Project_Image">
+        <div
+          className="projectContainer-overlay"
+          style={{ background: project.color, color: project.fontColor }}
+        >
+          <h3>{project.title}</h3>
+          <div className="projectContainer-overlay_technologies">
+            {project.technologies.map((tech) => (
+              <span
+                key={tech}
+                className="projectContainer-overlay_technologies--box"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+        <a>
+          <img src={project.source} alt="" />
+        </a>
       </div>
+    );
+  };
+
+  const ProjectContainer = () => {
+    return (
+      <div className="ProjectContainer_Projects">
+        {currentlyShowing.map((project) => (
+          <Project project={project} />
+        ))}
+      </div>
+    );
+  };
+
+  const ProjectButtons = () => {
+    return (
       <div className="project-buttons">
         {projectButtons.map((technology) => (
           <a key={technology.id} href="/" onClick={handleProjectBtnClick}>
@@ -52,11 +90,26 @@ const Projects = () => {
             </span>
           </a>
         ))}
+        <p className="project-help">{message}</p>
       </div>
-      <p className="project-help">{message}</p>
-      <div className="projects-container_projects">
-        <ProjectContainer currentlyShowing={currentlyShowing} />
+    );
+  };
+
+  const ProjectSectionTitle = () => {
+    return (
+      <div className="project-title">
+        <h1>some of my projects</h1>
       </div>
+    );
+  };
+
+  // Projects
+
+  return (
+    <div className="project" id="projects">
+      <ProjectSectionTitle />
+      <ProjectButtons />
+      <ProjectContainer />
     </div>
   );
 };

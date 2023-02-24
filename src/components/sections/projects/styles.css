@@ -34,8 +34,113 @@
   margin-top: 50px;
 }
 
-* {
-  /* border: 1px solid black; */
+.ProjectContainer_Projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  justify-content: center;
+}
+
+.ProjectContainer_Project_Image > a > img {
+  /* max-width: 500px; */
+  max-width: 100%;
+}
+
+.ProjectContainer_Project_Image {
+  border-radius: 15px;
+  /* border: 1px solid lightgray; */
+  overflow: hidden;
+  position: relative;
+}
+
+.projectContainer-overlay {
+  height: 100%;
+  width: 100%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  transform: translate(0, -100%);
+  transition: all 0.4s;
+  background: gray;
+  position: absolute;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  display: grid;
+  word-wrap: break-word;
+  padding: 20px;
+  justify-content: center;
+  box-sizing: border-box;
+
+  align-content: center;
+}
+
+.ProjectContainer_Project_Image:hover > .projectContainer-overlay,
+.info-slide:active > .projectContainer-overlay {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 0%;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  padding: 20px;
+  background: gray;
+  position: absolute;
+  transform: translate(0, -1.5%);
+  transition: transform 0.6s;
+}
+
+.projectContainer-overlay_technologies--box {
+  background: #1f5673;
+  padding: 10px 15px;
+  margin: 5px;
+  color: white;
+  display: inline-block;
+  font-weight: 400;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.25);
+  font-size: 12px;
+}
+
+@media (max-width: 1300px) {
+  .ProjectContainer_Projects {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 850px) {
+  .ProjectContainer_Projects {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .projectContainer-overlay_technologies--box {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+  .projectContainer-overlay > h3 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 450px) {
+  .projectContainer-overlay_technologies--box {
+    padding: 5px 10px;
+    font-size: 9px;
+  }
+  .projectContainer-overlay > h3 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 325px) {
+  .projectContainer-overlay_technologies--box {
+    padding: 3px 10px;
+    font-size: 8px;
+  }
+  .projectContainer-overlay > h3 {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 1750px) {
