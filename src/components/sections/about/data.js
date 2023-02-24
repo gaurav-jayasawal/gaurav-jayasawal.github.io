@@ -1,0 +1,15 @@
+export const technologies = [
+  "React",
+  "Android",
+  "HTML5",
+  "CSS3",
+  "Vanilla JS",
+  "Java",
+  "Flutter",
+  "SQL",
+  "NoSQL",
+  "Express",
+  "Kotlin",
+  "Adobe XD",
+  "PHP",
+];

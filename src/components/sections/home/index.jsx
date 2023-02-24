@@ -3,8 +3,11 @@ import logoImage from "../../../assets/name_logo.svg";
 import personImage from "../../../assets/first_page_image.svg";
 import SocialButton from "../../common/social_buttons/SocialButton";
 import { useEffect, useState } from "react";
+import { navLinks, socials } from "../../common/data";
 
 const Home = () => {
+  // State and effects
+
   const [overlayStyle, setOverlayStyle] = useState({
     height: "100%",
     width: "100%",
@@ -22,26 +25,36 @@ const Home = () => {
     display: "block",
   });
 
-  const handleClickOut = (e) => {
+  useEffect(() => {
+    document.addEventListener("mousedown", handleDocumentClick);
+  });
+
+  // Helper functions
+
+  const handleDocumentClick = (e) => {
     e.preventDefault();
     if (e.target.className === "home-overlay_bar--container") {
-      setOverlayStyle({
-        height: "100%",
-        width: "100%",
-        background: "rgb(126,126,126,0.94)",
-        top: "0",
-        left: "0",
-        transform: "translate(0,-100%)",
-        transition: "transform 0.6s",
-        position: "absolute",
-        display: "block",
-      });
-
-      setHamburgerStyle({
-        visibility: "visible",
-        transition: "visibility 0.7s",
-      });
+      hideOverlay();
     }
+  };
+
+  const hideOverlay = () => {
+    setOverlayStyle({
+      height: "100%",
+      width: "100%",
+      background: "rgb(126,126,126,0.94)",
+      top: "0",
+      left: "0",
+      transform: "translate(0,-100%)",
+      transition: "transform 0.6s",
+      position: "absolute",
+      display: "block",
+    });
+
+    setHamburgerStyle({
+      visibility: "visible",
+      transition: "visibility 0.7s",
+    });
   };
 
   const showOverlay = (e) => {
@@ -64,71 +77,87 @@ const Home = () => {
     });
   };
 
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOut);
-  });
-
   const smoothScrollToElement = (e, elementId) => {
     e.preventDefault();
+
+    hideOverlay();
     const element = document.getElementById(elementId);
     element.scrollIntoView({ behavior: "smooth" });
   };
 
+  // Sub components
+
+  const NavMenu = () => {
+    return (
+      <div className="home-overlay_bar" id="overlay" style={overlayStyle}>
+        <div className="home-overlay_bar--container">
+          {navLinks.map((navLink) => (
+            <a href="/" onClick={(e) => smoothScrollToElement(e, navLink.id)}>
+              <h1>{navLink.title}</h1>
+            </a>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+  const Hamburger = ({ hamburgerStyle, showOverlay }) => {
+    return (
+      <div className="navbar-burger" style={hamburgerStyle}>
+        <a href="/" onClick={(e) => showOverlay(e)}>
+          <div className="nav-bars">
+            <div id="nav-bars_1" />
+            <div id="nav-bars_2" />
+          </div>
+        </a>
+      </div>
+    );
+  };
+
+  const Socials = () => {
+    return (
+      <div className="home-flex3_social">
+        {socials.map((social) => (
+          <SocialButton href={social.link} class={social.fontAwesomeClass} />
+        ))}
+      </div>
+    );
+  };
+
+  const IntroSection = () => {
+    return (
+      <div className="home-flex2_intro">
+        <h1>HELLO! I'M GAURAV</h1>
+        <h3>A MOBILE AND WEB DEVELOPER</h3>
+      </div>
+    );
+  };
+
+  const BackgroundImage = () => {
+    return <img src={logoImage} width="200" alt="" />;
+  };
+
+  const PersonImage = () => {
+    return <img id="home-flex2_person" src={personImage} alt="" />;
+  };
+
+  // Home
+
   return (
     <div className="home" id="home">
       <div className="home-flex1">
-        <div className="home-overlay_bar" id="overlay" style={overlayStyle}>
-          <div className="home-overlay_bar--container">
-            <a href="/" onClick={(e) => smoothScrollToElement(e, "home")}>
-              <h1>HOME</h1>
-            </a>
-            <a href="/" onClick={(e) => smoothScrollToElement(e, "about")}>
-              <h1>ABOUT ME</h1>
-            </a>
-            <a href="/" onClick={(e) => smoothScrollToElement(e, "projects")}>
-              <h1>PROJECTS</h1>
-            </a>
-            <a href="/" onClick={(e) => smoothScrollToElement(e, "experience")}>
-              <h1>EXPERIENCE</h1>
-            </a>
-          </div>
-        </div>
-        <img src={logoImage} width="200" alt="" />
+        {NavMenu()}
+        <BackgroundImage />
       </div>
+
       <div className="home-flex2">
-        <div className="home-flex2_intro">
-          <h1>HELLO! I'M GAURAV</h1>
-          <h3>A MOBILE AND WEB DEVELOPER</h3>
-        </div>
-        <img id="home-flex2_person" src={personImage} alt="" />
+        <IntroSection />
+        <PersonImage />
       </div>
+
       <div className="home-flex3">
-        <div className="navbar-burger" style={hamburgerStyle}>
-          <a href="/" onClick={showOverlay}>
-            <div className="nav-bars">
-              <div id="nav-bars_1" />
-              <div id="nav-bars_2" />
-            </div>
-          </a>
-        </div>
-        <div className="home-flex3_social">
-          <SocialButton
-            href="mailto:jgaurav6@gmail.com"
-            class="far fa-envelope"
-          />
-          <SocialButton
-            href="https://www.linkedin.com/in/gauravjj/"
-            class="fab fa-linkedin-in"
-          />
-          <SocialButton
-            href="https://www.instagram.com/gauravjj/"
-            class="fab fa-instagram"
-          />
-          <SocialButton
-            href="https://github.com/jgaurav6"
-            class="fab fa-github"
-          />
-        </div>
+        <Hamburger hamburgerStyle={hamburgerStyle} showOverlay={showOverlay} />
+        <Socials />
         <div className="home-flex3_spacer" />
       </div>
     </div>
