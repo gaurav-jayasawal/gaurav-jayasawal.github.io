@@ -10,6 +10,191 @@
   letter-spacing: 5px;
 }
 
+.experienceCard {
+  border: 0.5px solid #c9c6c639;
+  border-radius: 30px;
+  overflow: hidden;
+  padding-top: 50px;
+  margin-bottom: 50px;
+  box-shadow: 3px 4px 5px rgb(0, 0, 0, 0.16);
+}
+
+.experienceCard_row-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+}
+
+.experienceCard_row-1_col2 {
+  justify-self: flex-end;
+}
+
+.experienceCard_row-1_col1 {
+  display: grid;
+  grid-template-columns: 100px auto;
+  justify-content: start;
+}
+
+.row-1_col1--company-name {
+  display: grid;
+  align-content: center;
+}
+
+.row-1_col1--company-name > a {
+  color: var(--darker-blue);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.experienceCard_row-1_col2 {
+  display: grid;
+  align-content: center;
+  font-weight: 600;
+  color: #535050;
+  font-size: 18px;
+  text-align: right;
+}
+
+.row-1_bottom-divider > hr {
+  border: 0.5px solid #c9c6c639;
+  margin: 50px 0px;
+}
+
+.experienceCard_row-2_ul {
+  font-size: 18px;
+}
+
+.experienceCard_row-2_ul > li {
+  line-height: 30px;
+  margin-top: 20px;
+}
+
+.experienceCard_row-3 {
+  margin-top: 50px;
+  padding: 30px 50px;
+  background: #efefef;
+}
+
+.experienceCard_row-1,
+.experienceCard_row-2,
+.row-1_bottom-divider {
+  padding: 0px 50px;
+}
+
+@media (max-width: 1500px) {
+  .row-1_bottom-divider > hr {
+    margin: 30px 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .row-1_bottom-divider > hr {
+    margin: 20px 0;
+  }
+  .experienceCard {
+    padding-top: 30px;
+  }
+  .experienceCard_row-3 {
+    margin-top: 30px;
+  }
+  .experienceCard_row-2_ul,
+  .experienceCard_row-3 {
+    font-size: 16px;
+  }
+  .row-1_col1--company-name > a {
+    font-size: 18px;
+  }
+  .experienceCard_row-1_col2 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 850px) {
+  .experienceCard_row-1,
+  .experienceCard_row-2,
+  .row-1_bottom-divider {
+    padding: 0px 40px;
+  }
+  .experienceCard_row-2_ul,
+  .experienceCard_row-3 {
+    font-size: 14px;
+  }
+  .row-1_col1--company-name > a {
+    font-size: 16px;
+  }
+  .experienceCard_row-1_col2 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 750px) {
+  .experienceCard_row-1,
+  .experienceCard_row-2,
+  .row-1_bottom-divider {
+    padding: 0px 30px;
+  }
+  .experienceCard_row-1_col1 {
+    grid-template-columns: 70px auto;
+  }
+  .row-1_col1--logo > img {
+    width: 45px;
+  }
+}
+
+@media (max-width: 600px) {
+  .experienceCard_row-2_ul,
+  .experienceCard_row-3 {
+    font-size: 12px;
+  }
+  .row-1_col1--company-name > a {
+    font-size: 14px;
+  }
+  .experienceCard_row-1_col2 {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 450px) {
+  .experienceCard_row-1,
+  .experienceCard_row-2,
+  .row-1_bottom-divider {
+    padding: 0px 20px;
+  }
+
+  .experienceCard_row-2_ul,
+  .experienceCard_row-3 {
+    font-size: 11px;
+  }
+  .row-1_col1--company-name > a {
+    font-size: 12.5px;
+  }
+  .experienceCard_row-1_col2 {
+    font-size: 11px;
+  }
+  .experienceCard_row-2 > ul {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .row-1_col1--logo > img {
+    width: 30px;
+  }
+  .experienceCard_row-1_col1 {
+    grid-template-columns: 45px auto;
+  }
+  .experienceCard_row-2_ul,
+  .experienceCard_row-3 {
+    font-size: 10px;
+  }
+  .row-1_col1--company-name {
+    font-size: 11px;
+  }
+  .experienceCard_row-1_col2 {
+    font-size: 10px;
+  }
+}
+
 @media (max-width: 1750px) {
   .experience {
     padding: 50px 200px;
