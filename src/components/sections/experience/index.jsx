@@ -4,7 +4,7 @@ import { industryExperience } from "./data";
 
 const Experience = () => {
   return (
-    <div className="experience">
+    <div className="experience" id="experience">
       <div className="experience-title">
         <h1>my experiences</h1>
       </div>

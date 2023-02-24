@@ -26,17 +26,15 @@ const Home = () => {
     e.preventDefault();
     if (e.target.className === "home-overlay_bar--container") {
       setOverlayStyle({
-        overlay_style: {
-          height: "100vh",
-          width: "100%",
-          background: "rgb(126,126,126,0.94)",
-          top: "0",
-          left: "0",
-          transform: "translate(0,-100%)",
-          transition: "transform 0.6s",
-          position: "absolute",
-          display: "block",
-        },
+        height: "100%",
+        width: "100%",
+        background: "rgb(126,126,126,0.94)",
+        top: "0",
+        left: "0",
+        transform: "translate(0,-100%)",
+        transition: "transform 0.6s",
+        position: "absolute",
+        display: "block",
       });
 
       setHamburgerStyle({
@@ -46,7 +44,7 @@ const Home = () => {
     }
   };
 
-  const hideHamburger = (e) => {
+  const showOverlay = (e) => {
     e.preventDefault();
 
     setOverlayStyle({
@@ -70,22 +68,28 @@ const Home = () => {
     document.addEventListener("mousedown", handleClickOut);
   });
 
+  const smoothScrollToElement = (e, elementId) => {
+    e.preventDefault();
+    const element = document.getElementById(elementId);
+    element.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="home">
+    <div className="home" id="home">
       <div className="home-flex1">
         <div className="home-overlay_bar" id="overlay" style={overlayStyle}>
           <div className="home-overlay_bar--container">
-            <a href="/">
+            <a href="/" onClick={(e) => smoothScrollToElement(e, "home")}>
               <h1>HOME</h1>
             </a>
-            <a href="/">
+            <a href="/" onClick={(e) => smoothScrollToElement(e, "about")}>
               <h1>ABOUT ME</h1>
             </a>
-            <a href="/">
-              <h1>RESUME</h1>
-            </a>
-            <a href="/">
+            <a href="/" onClick={(e) => smoothScrollToElement(e, "projects")}>
               <h1>PROJECTS</h1>
+            </a>
+            <a href="/" onClick={(e) => smoothScrollToElement(e, "experience")}>
+              <h1>EXPERIENCE</h1>
             </a>
           </div>
         </div>
@@ -100,7 +104,7 @@ const Home = () => {
       </div>
       <div className="home-flex3">
         <div className="navbar-burger" style={hamburgerStyle}>
-          <a href="/" onClick={hideHamburger}>
+          <a href="/" onClick={showOverlay}>
             <div className="nav-bars">
               <div id="nav-bars_1" />
               <div id="nav-bars_2" />

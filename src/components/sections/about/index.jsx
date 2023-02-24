@@ -22,7 +22,7 @@ const About = () => {
   ];
 
   return (
-    <div className="NewAbout-component">
+    <div className="NewAbout-component" id="about">
       <div className="NewAbout-component--title">
         <h1>a little about me</h1>
       </div>

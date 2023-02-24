@@ -40,7 +40,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="project">
+    <div className="project" id="projects">
       <div className="project-title">
         <h1>some of my projects</h1>
       </div>
