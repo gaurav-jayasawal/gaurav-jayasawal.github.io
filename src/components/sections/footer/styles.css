@@ -37,7 +37,7 @@
 .footer_row2-links--container {
   display: grid;
   grid-column-gap: 50px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   align-content: center;
   text-align: center;
 }

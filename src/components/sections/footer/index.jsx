@@ -1,7 +1,9 @@
 import "./styles.css";
-import SocialButton from "../../common/social_buttons/SocialButton";
+import SocialButton from "../../common/social_button";
 import logo from "../../../assets/name_logo.svg";
 import { socials } from "../../common/data";
+import { navLinks } from "../../common/data";
+import { smoothScrollToElement } from "../../common/helpers";
 
 const Footer = () => {
   // Sub components
@@ -39,9 +41,11 @@ const Footer = () => {
         </div>
         <div className="footer_row2-links">
           <div className="footer_row2-links--container">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
+            {navLinks.map((navLink) => (
+              <a href="/" onClick={(e) => smoothScrollToElement(e, navLink.id)}>
+                {navLink.title}
+              </a>
+            ))}
           </div>
         </div>
         <SocialButtons />
@@ -65,6 +69,8 @@ const Footer = () => {
       </div>
     );
   };
+
+  // Footer
 
   return (
     <div className="footer">

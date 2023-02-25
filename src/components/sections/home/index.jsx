@@ -1,9 +1,10 @@
 import "./styles.css";
 import logoImage from "../../../assets/name_logo.svg";
 import personImage from "../../../assets/first_page_image.svg";
-import SocialButton from "../../common/social_buttons/SocialButton";
+import SocialButton from "../../common/social_button";
 import { useEffect, useState } from "react";
 import { navLinks, socials } from "../../common/data";
+import { smoothScrollToElement } from "../../common/helpers";
 
 const Home = () => {
   // State and effects
@@ -77,23 +78,23 @@ const Home = () => {
     });
   };
 
-  const smoothScrollToElement = (e, elementId) => {
-    e.preventDefault();
-
-    hideOverlay();
-    const element = document.getElementById(elementId);
-    element.scrollIntoView({ behavior: "smooth" });
-  };
-
   // Sub components
+
+  const hideOverlayAndScrollToElement = (e, id) => {
+    hideOverlay();
+    smoothScrollToElement(e, id);
+  };
 
   const NavMenu = () => {
     return (
       <div className="home-overlay_bar" id="overlay" style={overlayStyle}>
         <div className="home-overlay_bar--container">
           {navLinks.map((navLink) => (
-            <a href="/" onClick={(e) => smoothScrollToElement(e, navLink.id)}>
-              <h1>{navLink.title}</h1>
+            <a
+              href="/"
+              onClick={(e) => hideOverlayAndScrollToElement(e, navLink.id)}
+            >
+              <h1>{navLink.title.toUpperCase()}</h1>
             </a>
           ))}
         </div>

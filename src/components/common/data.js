@@ -20,18 +20,18 @@ export const socials = [
 export const navLinks = [
   {
     id: "home",
-    title: "HOME",
+    title: "Home",
   },
   {
     id: "about",
-    title: "ABOUT ME",
+    title: "About me",
   },
   {
     id: "projects",
-    title: "PROJECTS",
+    title: "Projects",
   },
   {
     id: "experience",
-    title: "EXPERIENCE",
+    title: "Experience",
   },
 ];
