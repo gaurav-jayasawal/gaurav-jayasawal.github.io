@@ -13,7 +13,7 @@ export const socials = [
   },
   {
     fontAwesomeClass: "fab fa-github",
-    link: "https://github.com/jgaurav6",
+    link: "https://github.com/gaurav-jayasawal",
   },
 ];
 
