@@ -26,8 +26,11 @@ const Footer = () => {
           <a href="mailto:jgaurav6@gmail.com">jgaurav6@gmail.com</a>
         </h3>
         <h4>
-          I am a full stack developer looking to get hired in May 2019. Leave me
-          an email if you want me in your development team.
+          I am a full stack engineer always looking to grow.
+          <p>
+            I enjoy fast paced environments and smaller teams. Feel free to drop
+            me an email to say hello.
+          </p>
         </h4>
       </div>
     );

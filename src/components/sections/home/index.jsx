@@ -128,8 +128,9 @@ const Home = () => {
   const IntroSection = () => {
     return (
       <div className="home-flex2_intro">
-        <h1>HELLO! I'M GAURAV</h1>
-        <h3>A MOBILE AND WEB DEVELOPER</h3>
+        <h1>Namaste 🙏, I'm Gaurav</h1>
+        <h3>A software engineer at Google</h3>
+        <h4>(And clearly not a UX designer)</h4>
       </div>
     );
   };

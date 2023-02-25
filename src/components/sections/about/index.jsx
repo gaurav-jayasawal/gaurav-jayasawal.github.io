@@ -1,5 +1,5 @@
 import "./styles.css";
-import MyResume from "../../../assets/resume.pdf";
+import MyResume from "../../../assets/resume_2023.pdf";
 import AboutImage from "../../../assets/about_image.png";
 import { technologies } from "./data";
 
@@ -52,21 +52,17 @@ const About = () => {
     return (
       <div className="NewAbout-component--contents__right-description">
         <h3>
-          I go to SUNY Plattsburgh and will graduate in May 2019. I am also an
-          incoming Software Engineer at{" "}
-          <a href="https://appian.com" target="_blank">
-            Appian Corporation
-          </a>
-          , Tysons, VA.
+          Welcome to my portfolio website! I am a software engineer at Google,
+          currently working on the Google Play Protect client team. With a
+          passion for building secure and reliable software, I am proud to
+          contribute to ensuring the safety of over 3 billion Android devices
+          worldwide.
         </h3>
-
         <h3>
-          I am the Co-founder and vice president of{" "}
-          <a href="https://coding-hub.com" target="_blank">
-            Coding Hub
-          </a>
-          , a club dedicated to build software solutions to improve student
-          services on campus.{" "}
+          When I'm not coding, you can find me on the football pitch, playing as
+          a center forward. Football is probably the only thing I love more than
+          programming. My love for the game extends to supporting my favorite
+          club, Chelsea.
         </h3>
       </div>
     );
