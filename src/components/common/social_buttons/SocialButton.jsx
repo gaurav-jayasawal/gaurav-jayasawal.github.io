@@ -1,6 +1,6 @@
 import "./styles.css";
 
-const socialButton = (props) => (
+const SocialButton = (props) => (
   <a href={props.href} target="_blank" rel="noopener noreferrer">
     <div className="socialButtonContainer">
       <i id="icon" className={props.class} />
@@ -8,4 +8,4 @@ const socialButton = (props) => (
   </a>
 );
 
-export default socialButton;
+export default SocialButton;
