@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 292 243">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        font-size: 100px;
+        font-family: LucidaSans, Lucida Sans;
+      }
+
+      .cls-2 {
+        fill: #5bc3eb;
+      }
+
+      .cls-3 {
+        filter: url(#V);
+      }
+
+      .cls-4 {
+        filter: url(#A-2);
+      }
+
+      .cls-5 {
+        filter: url(#R);
+      }
+
+      .cls-6 {
+        filter: url(#U);
+      }
+
+      .cls-7 {
+        filter: url(#A);
+      }
+
+      .cls-8 {
+        filter: url(#G);
+      }
+    </style>
+    <filter id="G" x="0" y="0" width="89" height="129" filterUnits="userSpaceOnUse">
+      <feOffset dx="5" dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="A" x="105" y="0" width="85" height="129" filterUnits="userSpaceOnUse">
+      <feOffset dx="5" dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="U" x="207" y="0" width="85" height="129" filterUnits="userSpaceOnUse">
+      <feOffset dx="5" dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="R" x="8" y="114" width="79" height="129" filterUnits="userSpaceOnUse">
+      <feOffset dx="5" dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="A-2" x="105" y="114" width="85" height="129" filterUnits="userSpaceOnUse">
+      <feOffset dx="5" dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-5"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="V" x="208" y="114" width="81" height="129" filterUnits="userSpaceOnUse">
+      <feOffset dx="5" dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-6"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-6"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="name_logo" transform="translate(-96.5 -97.5)">
+    <g class="cls-8" transform="matrix(1, 0, 0, 1, 96.5, 97.5)">
+      <text id="G-2" data-name="G" class="cls-1" transform="translate(39.5 95.5)"><tspan x="-36.133" y="0">G</tspan></text>
+    </g>
+    <g class="cls-7" transform="matrix(1, 0, 0, 1, 96.5, 97.5)">
+      <text id="A-3" data-name="A" class="cls-1" transform="translate(142.5 95.5)"><tspan x="-34.497" y="0">A</tspan></text>
+    </g>
+    <g class="cls-6" transform="matrix(1, 0, 0, 1, 96.5, 97.5)">
+      <text id="U-2" data-name="U" class="cls-2" transform="translate(244.5 95.5)"><tspan x="-34.644" y="0">U</tspan></text>
+    </g>
+    <g class="cls-5" transform="matrix(1, 0, 0, 1, 96.5, 97.5)">
+      <text id="R-2" data-name="R" class="cls-1" transform="translate(42.5 209.5)"><tspan x="-31.616" y="0">R</tspan></text>
+    </g>
+    <g class="cls-4" transform="matrix(1, 0, 0, 1, 96.5, 97.5)">
+      <text id="A-4" data-name="A" class="cls-1" transform="translate(142.5 209.5)"><tspan x="-34.497" y="0">A</tspan></text>
+    </g>
+    <g class="cls-3" transform="matrix(1, 0, 0, 1, 96.5, 97.5)">
+      <text id="V-2" data-name="V" class="cls-1" transform="translate(243.5 209.5)"><tspan x="-32.69" y="0">V</tspan></text>
+    </g>
+  </g>
+</svg>
