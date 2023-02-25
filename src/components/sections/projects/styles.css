@@ -16,13 +16,13 @@
 }
 
 .project-buttons_btn {
-  background: #b1c2cb;
-  padding: 10px 15px;
+  background: #2b6b8e;
+  padding: 12px 20px;
   margin: 10px;
-  color: #1f5673;
+  color: #ffffff;
+  font-size: 14px;
   display: inline-block;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.25);
+  box-shadow: 3px 3px 3px rgb(0, 0, 0, 0.25);
 }
 
 .project-buttons_btn:active {
@@ -90,13 +90,13 @@
 }
 
 .projectContainer-overlay_technologies--box {
-  background: #1f5673;
+  background: #244050;
   padding: 10px 15px;
   margin: 5px;
   color: white;
   display: inline-block;
   font-weight: 400;
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.25);
   font-size: 12px;
 }
