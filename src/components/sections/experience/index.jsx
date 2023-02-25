@@ -34,8 +34,13 @@ const Experience = () => {
     return (
       <div className="experienceCard_row-2">
         <ul className="experienceCard_row-2_ul">
-          {experience.duties.map((duty) => (
-            <li key={duty}>{duty}</li>
+          {experience.duty_groups.map((dutyGroup) => (
+            <div>
+              <h3>{Object.keys(dutyGroup)[0]}</h3>
+              {Object.values(dutyGroup)[0].map((duty) => (
+                <li>{duty}</li>
+              ))}
+            </div>
           ))}
         </ul>
       </div>

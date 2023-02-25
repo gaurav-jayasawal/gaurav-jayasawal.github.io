@@ -64,9 +64,14 @@
   font-size: 18px;
 }
 
-.experienceCard_row-2_ul > li {
+.experienceCard_row-2_ul > div > li {
   line-height: 30px;
-  margin-top: 20px;
+  margin-top: 10px;
+}
+
+.experienceCard_row-2_ul > div > h3 {
+  line-height: 25px;
+  margin-top: 40px;
 }
 
 .experienceCard_row-3 {
