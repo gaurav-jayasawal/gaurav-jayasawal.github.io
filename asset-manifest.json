@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.fae6daff.css",
-    "main.js": "/static/js/main.f9edf5cc.js",
+    "main.css": "/static/css/main.39530658.css",
+    "main.js": "/static/js/main.384411ac.js",
     "static/media/screenshot5.png": "/static/media/screenshot5.231e3781a5b714e69186.png",
     "static/media/screenshot6.png": "/static/media/screenshot6.30d7d217c6a67b138a5c.png",
     "static/media/screenshot3.png": "/static/media/screenshot3.6e1e6b593995dd564cd8.png",
@@ -9,8 +9,8 @@
     "static/media/screenshot4.png": "/static/media/screenshot4.51e62c298fa059bdd25d.png",
     "static/media/google_logo.png": "/static/media/google_logo.6bc7d49355c4e25579a0.png",
     "static/media/screenshot7.png": "/static/media/screenshot7.886a96e8251d87ccd62b.png",
+    "static/media/resume_2023.pdf": "/static/media/resume_2023.a8dc230da2a05f089420.pdf",
     "static/media/about_image.png": "/static/media/about_image.298856b17d6819b8e15a.png",
-    "static/media/resume.pdf": "/static/media/resume.fdeeef419d9796bdf215.pdf",
     "static/media/screenshot8.png": "/static/media/screenshot8.559db9349089bbdd7ac7.png",
     "static/media/screenshot2.png": "/static/media/screenshot2.7392091a0257d392e3e9.png",
     "static/media/first_page_image.svg": "/static/media/first_page_image.e7d8318ad7d9c52f0e0d3890f39e48bd.svg",
@@ -20,11 +20,11 @@
     "static/media/technorio.jpg": "/static/media/technorio.9e280f8d1a97222473e6.jpg",
     "static/media/name_logo.svg": "/static/media/name_logo.153b8da156d93b0272723581e64bff33.svg",
     "index.html": "/index.html",
-    "main.fae6daff.css.map": "/static/css/main.fae6daff.css.map",
-    "main.f9edf5cc.js.map": "/static/js/main.f9edf5cc.js.map"
+    "main.39530658.css.map": "/static/css/main.39530658.css.map",
+    "main.384411ac.js.map": "/static/js/main.384411ac.js.map"
   },
   "entrypoints": [
-    "static/css/main.fae6daff.css",
-    "static/js/main.f9edf5cc.js"
+    "static/css/main.39530658.css",
+    "static/js/main.384411ac.js"
   ]
 }
