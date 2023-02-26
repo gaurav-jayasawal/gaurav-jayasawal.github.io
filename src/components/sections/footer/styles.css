@@ -132,7 +132,7 @@
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
   .footer_row2 {
     display: block;
   }
@@ -143,6 +143,7 @@
   .footer_row2-social {
     display: grid;
     padding-top: 20px;
+    justify-items: center;
   }
   .footer_row2-logo {
     justify-content: center;

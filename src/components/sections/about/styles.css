@@ -117,7 +117,7 @@
 @media (max-width: 1000px) {
   .NewAbout-component .NewAbout-component--contents {
     grid-template-columns: 1fr;
-    grid-row-gap: 50px;
+    row-gap: 50px;
   }
   .NewAbout-component--content__left-image {
     display: grid;
@@ -158,5 +158,15 @@
 @media (max-width: 450px) {
   .NewAbout-component--content__left-image img {
     width: 100%;
+  }
+
+  .NewAbout-component .NewAbout-component--contents {
+    row-gap: 20px;
+  }
+
+  .NewAbout-component .NewAbout-component--title {
+    font-size: 12px;
+    margin-bottom: 15px;
+    text-align: center;
   }
 }
