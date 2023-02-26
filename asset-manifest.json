@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.39530658.css",
+    "main.css": "/static/css/main.e4359965.css",
     "main.js": "/static/js/main.384411ac.js",
     "static/media/screenshot5.png": "/static/media/screenshot5.231e3781a5b714e69186.png",
     "static/media/screenshot6.png": "/static/media/screenshot6.30d7d217c6a67b138a5c.png",
@@ -20,11 +20,11 @@
     "static/media/technorio.jpg": "/static/media/technorio.9e280f8d1a97222473e6.jpg",
     "static/media/name_logo.svg": "/static/media/name_logo.153b8da156d93b0272723581e64bff33.svg",
     "index.html": "/index.html",
-    "main.39530658.css.map": "/static/css/main.39530658.css.map",
+    "main.e4359965.css.map": "/static/css/main.e4359965.css.map",
     "main.384411ac.js.map": "/static/js/main.384411ac.js.map"
   },
   "entrypoints": [
-    "static/css/main.39530658.css",
+    "static/css/main.e4359965.css",
     "static/js/main.384411ac.js"
   ]
 }
