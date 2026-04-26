@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback, useImperativeHandle, forwardRef } from 'react';
 import './Chatbot.css';
 
 const SUGGESTIONS = [
@@ -8,7 +8,7 @@ const SUGGESTIONS = [
   "Has he won any awards?",
 ];
 
-export default function Chatbot() {
+const Chatbot = forwardRef(function Chatbot(_, ref) {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
@@ -36,21 +36,27 @@ export default function Chatbot() {
     }
   }, [isOpen]);
 
-  const sendMessage = async (text) => {
-    const userMessage = text || input.trim();
-    if (!userMessage || isLoading) return;
+  const sendMessage = useCallback(async (text) => {
+    const userMessage = (text || '').trim();
+    if (!userMessage) return;
 
     setShowSuggestions(false);
     setInput('');
 
-    const newMessages = [...messages, { role: 'user', content: userMessage }];
-    setMessages(newMessages);
-    setIsLoading(true);
+    setMessages(prev => {
+      const newMessages = [...prev, { role: 'user', content: userMessage }];
+      // Fire the API call with the new messages
+      doApiCall(newMessages);
+      return newMessages;
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
+  const doApiCall = async (allMessages) => {
+    setIsLoading(true);
     try {
-      // Send only role/content pairs (exclude the initial greeting for API)
-      const apiMessages = newMessages
-        .filter((_, i) => i > 0 || newMessages[0].role === 'user')
+      const apiMessages = allMessages
+        .filter((_, i) => i > 0 || allMessages[0].role === 'user')
         .map(({ role, content }) => ({ role, content }));
 
       const res = await fetch('/api/chat', {
@@ -59,19 +65,17 @@ export default function Chatbot() {
         body: JSON.stringify({ messages: apiMessages }),
       });
 
-      if (!res.ok) {
-        throw new Error(`HTTP ${res.status}`);
-      }
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
       const data = await res.json();
-      setMessages((prev) => [...prev, { role: 'assistant', content: data.reply }]);
+      setMessages(prev => [...prev, { role: 'assistant', content: data.reply }]);
     } catch (err) {
       console.error('Chat error:', err);
-      setMessages((prev) => [
+      setMessages(prev => [
         ...prev,
         {
           role: 'assistant',
-          content: '> Connection error. The system is temporarily offline. Try again or reach out to Gaurav directly at gauravjj@ or on LinkedIn.',
+          content: '> Connection error. The system is temporarily offline. Try again or reach out to Gaurav directly on LinkedIn.',
         },
       ]);
     } finally {
@@ -79,15 +83,20 @@ export default function Chatbot() {
     }
   };
 
+  // Expose method for the vibe bar to call
+  useImperativeHandle(ref, () => ({
+    sendFromOutside(text) {
+      setIsOpen(true);
+      // Small delay so the chat window opens before the message appears
+      setTimeout(() => sendMessage(text), 150);
+    },
+  }), [sendMessage]);
+
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      sendMessage();
+      sendMessage(input);
     }
-  };
-
-  const handleSuggestion = (text) => {
-    sendMessage(text);
   };
 
   return (
@@ -158,7 +167,7 @@ export default function Chatbot() {
                 <button
                   key={s}
                   className="chatbot__suggestion"
-                  onClick={() => handleSuggestion(s)}
+                  onClick={() => sendMessage(s)}
                 >
                   {s}
                 </button>
@@ -185,7 +194,7 @@ export default function Chatbot() {
           />
           <button
             className="chatbot__send"
-            onClick={() => sendMessage()}
+            onClick={() => sendMessage(input)}
             disabled={isLoading || !input.trim()}
             aria-label="Send message"
           >
@@ -195,4 +204,6 @@ export default function Chatbot() {
       </div>
     </>
   );
-}
+});
+
+export default Chatbot;

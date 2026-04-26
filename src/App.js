@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
@@ -8,15 +9,21 @@ import Footer from './components/Footer/Footer';
 import Chatbot from './components/Chatbot/Chatbot';
 
 function App() {
+  const chatbotRef = useRef(null);
+
+  const handleVibeSend = (text) => {
+    chatbotRef.current?.sendFromOutside(text);
+  };
+
   return (
     <div className="App">
       <Navbar />
-      <Hero />
+      <Hero onVibeSend={handleVibeSend} />
       <Impact />
       <Method />
       <Lab />
       <Footer />
-      <Chatbot />
+      <Chatbot ref={chatbotRef} />
     </div>
   );
 }

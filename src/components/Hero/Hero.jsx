@@ -23,11 +23,13 @@ const vibePrompts = [
   'Create an observability pipeline with Jaeger + GA4',
 ];
 
-export default function Hero() {
+export default function Hero({ onVibeSend }) {
   const [displayedLines, setDisplayedLines] = useState([]);
   const [currentPrompt, setCurrentPrompt] = useState('');
   const [promptIndex, setPromptIndex] = useState(0);
   const [isTypingPrompt, setIsTypingPrompt] = useState(false);
+  const [vibeInput, setVibeInput] = useState('');
+  const [isFocused, setIsFocused] = useState(false);
   const terminalRef = useRef(null);
   const hasAnimated = useRef(false);
 
@@ -45,8 +47,9 @@ export default function Hero() {
     });
   }, []);
 
-  // Rotating prompt typewriter
+  // Rotating prompt typewriter — pauses when user focuses the vibe bar
   const typePrompt = useCallback(() => {
+    if (isFocused) return;
     const fullText = vibePrompts[promptIndex];
     let charIndex = 0;
     setIsTypingPrompt(true);
@@ -65,12 +68,29 @@ export default function Hero() {
     }, 40);
 
     return () => clearInterval(typeInterval);
-  }, [promptIndex]);
+  }, [promptIndex, isFocused]);
 
   useEffect(() => {
+    if (isFocused) return;
     const timeout = setTimeout(typePrompt, 500);
     return () => clearTimeout(timeout);
-  }, [typePrompt]);
+  }, [typePrompt, isFocused]);
+
+  const handleVibeSend = () => {
+    const text = vibeInput.trim();
+    if (!text) return;
+    setVibeInput('');
+    if (onVibeSend) {
+      onVibeSend(text);
+    }
+  };
+
+  const handleVibeKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleVibeSend();
+    }
+  };
 
   return (
     <section id="command" className="hero">
@@ -128,10 +148,26 @@ export default function Hero() {
           ))}
         </div>
 
-        <div className="hero__vibe-bar">
+        <div className={`hero__vibe-bar ${isFocused ? 'hero__vibe-bar--focused' : ''}`}>
           <span className="vibe-bar__icon">⌨</span>
-          <span className="vibe-bar__placeholder">Type a vibe to execute...</span>
-          <button className="vibe-bar__send" onClick={() => window.open('mailto:jgaurav6@gmail.com', '_blank')}>
+          <input
+            type="text"
+            className="vibe-bar__input"
+            placeholder="Ask me anything about Gaurav..."
+            value={vibeInput}
+            onChange={(e) => setVibeInput(e.target.value)}
+            onKeyDown={handleVibeKeyDown}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => {
+              if (!vibeInput) setIsFocused(false);
+            }}
+            aria-label="Ask about Gaurav"
+          />
+          <button
+            className="vibe-bar__send"
+            onClick={handleVibeSend}
+            disabled={!vibeInput.trim()}
+          >
             SEND
           </button>
         </div>
