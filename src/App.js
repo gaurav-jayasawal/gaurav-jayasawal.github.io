@@ -1,18 +1,22 @@
-import "./App.css";
-import Home from "./components/sections/home";
-import About from "./components/sections/about";
-import Project from "./components/sections/projects";
-import Experience from "./components/sections/experience";
-import Footer from "./components/sections/footer";
+import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import Hero from './components/Hero/Hero';
+import Impact from './components/Impact/Impact';
+import Method from './components/Method/Method';
+import Lab from './components/Lab/Lab';
+import Footer from './components/Footer/Footer';
+import Chatbot from './components/Chatbot/Chatbot';
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <About />
-      <Project />
-      <Experience />
+      <Navbar />
+      <Hero />
+      <Impact />
+      <Method />
+      <Lab />
       <Footer />
+      <Chatbot />
     </div>
   );
 }

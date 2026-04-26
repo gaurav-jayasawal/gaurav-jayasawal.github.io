@@ -1,11 +1,27 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
-
-:root {
-  --light-blue: #ace8ff;
-  --darker-blue: #5bc3eb;
+/* App-level layout */
+.App {
+  position: relative;
+  min-height: 100vh;
 }
 
-* {
-  font-family: "Montserrat", sans-serif;
-  /* border: 2px solid blue; */
+/* Background grid effect */
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridScroll 8s linear infinite;
+}
+
+.App > * {
+  position: relative;
+  z-index: 1;
 }
