@@ -1,13 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Impact.css';
 
+import appianLogo from '../../assets/company_logos/appian_logo_2.png';
+import googleLogo from '../../assets/company_logos/google_logo.png';
+
 const experiences = [
   {
     file: 'log_entry_01.sys',
     company: 'Appian Corporation',
     role: 'Senior Software Engineer',
     period: 'Aug 2023 — Present',
-    icon: '⚙',
+    logo: appianLogo,
     status: 'ACTIVE',
     description:
       'Spearheaded mission-critical mobile features. Built performance optimization reducing slow UI reevaluations by 20-25% in offline mode. Pioneered Mobile Observability with Jaeger tracing, Looker Studio dashboards, and Firebase/GA4 analytics.',
@@ -25,7 +28,7 @@ const experiences = [
     company: 'Google Chrome',
     role: 'Software Engineer',
     period: 'Jan 2022 — Jul 2023',
-    icon: '🌐',
+    logo: googleLogo,
     status: 'SOLVED',
     description:
       'Planned and shipped the Improved Tab Strip for Android tablets, co-authoring 3 US design patents. Reduced tab switch time by 12% and slide count by 27%. Received departmental impact award.',
@@ -44,7 +47,7 @@ const experiences = [
     company: 'Google Play Store',
     role: 'Software Engineer',
     period: 'Jan 2022 — Jul 2023',
-    icon: '🛡',
+    logo: googleLogo,
     status: 'SOLVED',
     description:
       'Spearheaded the Just-in-Time Protection feature, enabling real-time malware scanning of previously unseen threats across 125 billion app scans daily for 3B+ Android devices.',
@@ -62,7 +65,7 @@ const experiences = [
     company: 'Appian Corporation',
     role: 'Software Engineer',
     period: 'Jul 2019 — Jan 2022',
-    icon: '📱',
+    logo: appianLogo,
     status: 'SOLVED',
     description:
       'Led cross-functional development for the Appian Android app serving 30K monthly users. Architected SAML-based auth with client certificates, unblocking high-security clients like USMC and Fannie Mae. Delivered Static and Dynamic Offline capabilities.',
@@ -118,7 +121,7 @@ function ExperienceCard({ exp, index }) {
         <div className="impact-card__content">
           <div className="impact-card__top-row">
             <div className="impact-card__company-info">
-              <span className="impact-card__icon">{exp.icon}</span>
+              <img src={exp.logo} alt={exp.company} className="impact-card__logo" />
               <h3 className="impact-card__company">{exp.company}</h3>
             </div>
             <div className={`impact-card__status impact-card__status--${exp.status.toLowerCase()}`}>

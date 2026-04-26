@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback, useImperativeHandle, forwardRef } from 'react';
+import ReactMarkdown from 'react-markdown';
 import './Chatbot.css';
 
 const SUGGESTIONS = [
@@ -148,7 +149,13 @@ const Chatbot = forwardRef(function Chatbot(_, ref) {
               {msg.role === 'user' && (
                 <span className="chatbot__msg-label">{'>'} you</span>
               )}
-              <div className="chatbot__msg-content">{msg.content}</div>
+              <div className="chatbot__msg-content">
+                {msg.role === 'assistant' ? (
+                  <ReactMarkdown>{msg.content}</ReactMarkdown>
+                ) : (
+                  msg.content
+                )}
+              </div>
             </div>
           ))}
 

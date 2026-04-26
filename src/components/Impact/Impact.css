@@ -95,8 +95,12 @@
   gap: 12px;
 }
 
-.impact-card__icon {
-  font-size: 1.5rem;
+.impact-card__logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 4px;
+  flex-shrink: 0;
 }
 
 .impact-card__company {

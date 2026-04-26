@@ -222,6 +222,57 @@
   border-right: 2px solid var(--accent-purple);
 }
 
+/* ===== MARKDOWN INSIDE MESSAGES ===== */
+.chatbot__msg--assistant .chatbot__msg-content p {
+  margin: 0 0 6px 0;
+  line-height: 1.6;
+}
+
+.chatbot__msg--assistant .chatbot__msg-content p:last-child {
+  margin-bottom: 0;
+}
+
+.chatbot__msg--assistant .chatbot__msg-content strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.chatbot__msg--assistant .chatbot__msg-content code {
+  background: rgba(0, 255, 65, 0.1);
+  color: var(--accent-cyan);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.74rem;
+  font-family: var(--font-mono);
+}
+
+.chatbot__msg--assistant .chatbot__msg-content ul {
+  margin: 4px 0;
+  padding-left: 14px;
+  list-style: none;
+}
+
+.chatbot__msg--assistant .chatbot__msg-content ul li {
+  position: relative;
+  padding-left: 12px;
+  margin-bottom: 3px;
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.chatbot__msg--assistant .chatbot__msg-content ul li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+.chatbot__msg--assistant .chatbot__msg-content em {
+  color: var(--accent-purple);
+  font-style: normal;
+}
+
 /* Typing indicator */
 .chatbot__typing {
   display: flex;
